@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}Main-page{% endblock  %}
+    
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'css/Login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+{% endblock  %}
+
+{% comment %} login-page {% endcomment %}
+{% block content %}
+<div id="container">
+    <form class="login_section" method="post">
+        {% csrf_token %}
+        <label for="uname"><b>Username:</b></label><br>
+        <input type="text" id="uname" placeholder="Enter Username" name="uname"><br>
+    
+        <label for="psw"><b>Password:</b></label><br>
+        <input type="password" id="psw" placeholder="Enter Password" name="psw"><br>
+
+        <span class="psw"><a class="forget" href="#">Forgot password?</a></span><br>
+    
+        <input type="checkbox"name="remember"> Remember me<br>
+        <div>
+            <a href="{% url 'template' %}"><button type="button" class="login">Log In</button></a>
+            <button onclick="document.getElementById('id01').style.display='block'" class="signup">SignUp</button>
+        
+
+{% comment %} after click on signup button {% endcomment %}
+            <div id="id01" class="modal">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+                <form class="modal-content" action="">
+                    <div class="container">
+                        <h1 style="color:white;">Sign Up</h1>
+                        <p style="color:white;">Please fill in this form to create an account.</p>
+                        <hr>
+
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Enter Email" name="email" required>
+                
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw" required>
+                
+                        <label for="psw-repeat"><b>Repeat Password</b></label>
+                        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                        
+                        <label>
+                        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                        </label>
+                
+                        <p style="color:white;">By creating an account you agree to our <a href="#" style="color:white">Terms & Privacy</a>.</p>
+                
+                        <div class="clearfix">
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                            <button type="submit" class="signupbtn">Sign Up</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div> 
+    </form>
+    <div class="first">
+        <h2>Build a professional website for free</h2>
+        <p class="para">Create your resume easily with our free builder and professional templates.</p>
+        <a href="{% url 'template' %}"><button type="button" class="btn">Explore</button></a>
+    </div>
+</div>
+<script src="{% static 'js/signup.js' %}"></script>
+{% endblock  %}
+{% comment %} login-page {% endcomment %}

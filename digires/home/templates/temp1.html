@@ -1,0 +1,83 @@
+{% load static %}
+    
+{% block css_files %}
+    <link rel="stylesheet" href="{% static '' %}">
+{% endblock  %}
+
+{% block content %}
+
+
+<div class="container" id="resume-template">
+    <div class="flex">
+        <div class="col-1">
+            {% comment %} column:1 {% endcomment %}
+            <img src="/media/{{userdetail.photo}}" class="img-responsive" alt="" id="imgTemplate">
+            <div>
+                <p id="nameT1">{{userdetail.name}}</p>
+                <p id="contactT">{{userdetail.phone}}</p>
+                <p id="emailT">{{userdetail.email}}</p>
+                <p id="addressT">{{userdetail.address}}</p>
+                <hr>
+                <p><a id="linkedinT" href="#">{{userdetail.linkedin}}</a></p>
+                <p><a id="githubT" href="#">{{userdetail.github}}</a></p>
+                <p><a id="webT" href="#">{{userdetail.web}}</a></p>
+            </div>
+        </div>
+        <div class="col-2">
+            <h1 id="nameT2">{{userdetail.name}}</h1>
+
+            {% comment %} work exp {% endcomment %}
+            <div class="card">
+                <div class="card-header">
+                    <h3>Work Exp.</h3>
+                </div>
+                <div class="card-body">
+                    <ul id="wexT">
+                        <li>{{userdetail.workexp}}</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>About</h3>
+                </div>
+                <div class="card-body">
+                    <ul id="aqT">
+                        <li>{{userdetail.about}}</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Academic Qualifications</h3>
+                </div>
+                <div class="card-body">
+                    <ul id="aqT">
+                        <li>{{userdetail.acadqual}}</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Your Interests</h3>
+                </div>
+                <div class="card-body">
+                    <ul id="aqT">
+                        <li>{{userdetail.inter}}</li>
+                    </ul>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+    <div class = "print-button" >
+        <button>Print Your Resume</button>
+    </div>
+</div>
+
+
+{% endblock  %}
