@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class UserDetail(models.Model):
     name           = models.CharField(max_length=50)
@@ -8,7 +9,7 @@ class UserDetail(models.Model):
     web            = models.CharField(max_length=800, null=True)
     linkedin       = models.CharField(max_length=800, null=True)
     github         = models.CharField(max_length=800, null=True)
-    photo          = models.ImageField(null=True)
+   
     acadqual       = models.CharField(max_length=500, null=True)
     workexp        = models.CharField(max_length=500, null=True)
     inter          = models.CharField(max_length=500, null=True)

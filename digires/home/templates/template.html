@@ -9,7 +9,7 @@
 
 
 
-<form id="resume-form" method="POST" action="" >
+<form id="resume-form" method="POST" enctype="multipart/form-data">
 {% csrf_token %}
     <h1>Enter your details</h1>
     <div class="generate">
@@ -34,12 +34,6 @@
             <div class="a">
                 <label for="addressfield">Your Address</label><br>
                 <textarea id="addressfield" placeholder="Enter here" rows="3" cols="" name="address"></textarea>
-            </div>
-
-
-            <div class="a">
-                <label>Select your photo</label>
-                <input type = "file" id="imgField" name="photo"> 
             </div>
             
             <div class="a">

@@ -20,11 +20,26 @@
                 <ul class="nav">
                     <li><a class="link" href="{% url 'home' %}">Home</a></li>
                     <li><a class="link" href="{% url 'template' %}">Templates</a></li>
-                    <li><a class="link" href="{% url 'contact' %}">Contact</a></li>
                     <li><a class="link" href="{% url 'about' %}">About</a></li>
                 <ul>
             </nav>
+
+            {% if request.user.is_authenticated %}
+            <p>Hello, {{request.user}}</p>
+                <a class="log"href="{% url 'logout' %}">Logout</a>
+            {% else %}
+                <a class="log" href="{% url 'login' %}">Login</a>
+            {% endif %}
         </header>
+{% comment %} for not found user in db {% endcomment %}
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %} 
+        </ul>
+        {% endif %}     
+
         {% block content %}
         
         {% endblock  %}
