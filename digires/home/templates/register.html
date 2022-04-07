@@ -25,12 +25,15 @@
 
 <div>
     <form method="POST" novalidate>
-    {% csrf_token %}
+        {% csrf_token %}
+
         {% for fm in form %}
             {{fm.label_tag}} {{fm}} {{fm.errors | striptags}} <br><br>
         {%endfor%}
         <input type="submit" value="Register">
+
     </form>
+
     <p>Already sign up?</p>
     <a href="{% url 'login' %}">Login</a>
 </div>
