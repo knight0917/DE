@@ -2,77 +2,77 @@
 
     
 {% block css_files %}
-    <link rel="stylesheet" href="{% static '' %}">
+    <link rel="stylesheet" href="{% static 'style/templatestyle.css' %}">
 {% endblock  %}
 
 {% block content %}
 
 
 
-<form id="resume-form" method="POST" enctype="multipart/form-data">
+<form id="" method="POST">
 {% csrf_token %}
     <h1>Enter your details</h1>
-    <div class="generate">
-        <div class="per"> 
+    <div class="">
+        <div class=""> 
         <h2>Personal details</h2>
 
-            <div class="a">
+            <div class="">
                 <label for="namefields">Your Name</label><br>
                 <input type="text" class="" id="namefields" placeholder="Enter here" name="name">
             </div>
 
-            <div class="a">
+            <div class="">
                 <label for="phonefield">Your Phone</label><br>
                 <input type="number" class="" id="phonefield" placeholder="Enter here" name="phone">
             </div>
 
-            <div class="a">
+            <div class="">
                 <label for="emailfield">Your Email</label><br>
                 <input type="email" class="" id="emailfield" placeholder="Enter here" name="email">
             </div>
 
-            <div class="a">
+            <div class="">
                 <label for="addressfield">Your Address</label><br>
                 <textarea id="addressfield" placeholder="Enter here" rows="3" cols="" name="address"></textarea>
             </div>
             
-            <div class="a">
+            <div class="">
                 <label for="linkedinfield">Linkedin</label><br>
                 <input type="text" id="linkedinfield" placeholder="Enter here" name="linkedin">
             </div>
 
-            <div class="a">
+            <div class="">
                 <label for="githubfield">github</label><br>
                 <input type="text" id="githubfield" placeholder="Enter here" name="github">
             </div>
 
-            <div class="a">
+            <div class="">
                 <label for="webfield">Your Website Link</label><br>
                 <input type="text" id="webfield" placeholder="Enter here" name="web">
             </div>
         </div>
 
-        <div class="pro">
+        <div class="">
             <h2>Professional details</h2>
     
-            <div id="acadmicQuali">
-                <label class="a" for="quali">Acadmic Acheivements</label><br>
+            <div id="">
+                <label class="" for="quali">Acadmic Acheivements</label><br>
                 <textarea id="quali" class="acadfield" placeholder="Enter here" rows="3" name="acadqual"></textarea>
             </div>
 
             
-            <div id="wkexp">
-                <label class="a" for="wkexperience">Work Experience</label><br>
+            <div id="">
+                <label class="" for="wkexperience">Work Experience</label><br>
                 <textarea id="wkexperience" class="wefield" placeholder="Enter here" rows="3" name="workexp"></textarea>
             </div>
 
-            <div id="inter">
+            <div id="">
                 <label class="a" for="inter">Your Interests</label><br>
                 <textarea id="inter" class="inter" placeholder="Enter here" rows="3" name="inter"></textarea>
             </div>
 
-            <div id="about">
-                <label class="a" for="about">About</label><br>
+            <div id="">
+                <label class="" for="about">About</label><br>
                 <textarea id="about" class="about" placeholder="Enter here" rows="3" name="about"></textarea>
             </div>
             <div id="">
@@ -82,7 +82,7 @@
 
         </div>
     </div>
-    <div class="generatebtn">
+    <div class="">
         <a href=""><button type="Submit">Submit</button></a>
     </div>
 </form>

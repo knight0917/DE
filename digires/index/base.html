@@ -9,12 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/basestyle.css' %}">
     {% block css_files %}{% endblock  %}
 
 </head>
     <body>
-        <header>
+        <header class="head">
             <h1 class="logo">DigiRes</h1>
             <nav>
                 <ul class="nav">
@@ -26,11 +26,13 @@
 
             {% if request.user.is_authenticated %}
             <p>Hello, {{request.user}}</p>
-                <a class="log"href="{% url 'logout' %}">Logout</a>
+                <a class="link"href="{% url 'logout' %}">Logout</a>
             {% else %}
-                <a class="log" href="{% url 'login' %}">Login</a>
+                <a class="link" href="{% url 'login' %}">Login</a>
             {% endif %}
+
         </header>
+        
 {% comment %} for not found user in db {% endcomment %}
         {% if messages %}
         <ul class="messages">
@@ -43,6 +45,8 @@
         {% block content %}
         
         {% endblock  %}
-
+        <div class="footer">
+            <footer>&copy; Copyright 2022 digires.in</footer>
+        </div>
     </body>
 </html>

@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@100&family=Short+Stack&display=swap');
 
-
 *{
     box-sizing: border-box;
     margin: 0;
@@ -8,13 +7,26 @@
     font-family: "Montserrat", sans-serif;
 }
 
+.nav{
+    list-style: none;
+    font-family: "Montserrat", sans-serif;
+
+}
+
 .logo{
     cursor: pointer;
-    order: 3;
-    margin-left: auto;
     color:rgb(255, 255, 255);
     text-shadow: 0px 0px 4px white;
-    font-family:"Montserrat", sans-serif;
+}
+
+.head{
+    background-color: rgb(49, 98, 155);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding:30px 10%;
+    
+   
 }
 
 li .link{
@@ -25,26 +37,27 @@ li .link{
     text-decoration: none;
 }
 
-header{
-    background-color: rgb(49, 98, 155);
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding:30px 10%;
-}
-
-.nav{
-    list-style: none;
-}
-
 .nav li{
     display: inline-block;
     padding:0px 20px;
 }
+
 .nav li .link{
     transition: 0.3s ease 0s;
 }
 
 .nav li .link:hover{
-    color: red;
+    color: white;
+}
+
+.footer{
+    background-color: rgb(49, 98, 155);
+    height: 50px; 
+}
+footer{
+    font-size:larger;
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 4px white;
+    padding: 10px;
 }

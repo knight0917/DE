@@ -1,0 +1,39 @@
+/* h2 tags */
+.first{
+    position:absolute;
+    top:30%;
+    left:50%;
+    font-size: 30px;
+}
+/* p tags */
+.para{
+    margin:10px;
+    color:rgb(49, 98, 155);
+    font-size: 25px;
+}
+.btn {
+    
+    background-color: #23c5c5;
+    border-radius: 5px;
+    color: white;
+    padding: 12px 100px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: white; 
+    color: #23c5c5; 
+    border: 2px solid #23c5c5;
+}
+  
+.btn:hover {
+    background-color:rgb(49, 98, 155);
+    border-color: rgb(49, 98, 155);
+}
+
+.resume-img{
+    width: 45%;
+    border-top-right-radius: 40%;
+    border-bottom-right-radius: 40%;
+    box-shadow: 10px 10px 75px #ccc;
+    margin: 3% 0%;
+}
+

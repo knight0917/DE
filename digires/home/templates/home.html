@@ -4,12 +4,16 @@
 {% block page_title %}Main-page{% endblock  %}
     
 {% block css_files %}
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
-    
+    <link rel="stylesheet" href="{% static 'style/homestyle.css' %}">
 {% endblock  %}
 
 {% comment %} login-page {% endcomment %}
 {% block content %}
+<div>
+    <div>
+        <img class="resume-img" src="{% static 'images/resume.svg' %}" alt="">
+    </div>
+
     <div class="first">
         <h2>Build a professional website for free</h2>
         <p class="para">Create your resume easily with our free builder and professional templates.</p>
