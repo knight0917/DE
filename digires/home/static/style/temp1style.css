@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Roboto&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+#resume-template{
+    display: grid;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+}
+
+.details{
+    display: flex;
+    padding: 5%;
+}
+
+.print-button{
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+}
+
+.right-side{
+    font-size: larger;
+}
+
+.col-1{
+    background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+    padding: 2%;
+    border-radius: 8px;
+}
+
+.col-2{
+    margin: 0px 0px 0px 30px;
+    background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+    border-radius: 8px;
+    padding: 2%;
+}
+
+p, h1, .card{
+    margin: 0px 0px 20px 0px;
+}
+
+i{
+    margin: 0px 10px 0px 0px;
+}
+
+button {
+    border-radius: 10px;
+    padding: 12px 10px;
+    width: 100%;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: white; 
+    color: #23c5c5; 
+    border: 2px solid #23c5c5;
+}
+
+button:hover {
+    background-color:rgb(49, 98, 155);
+    border-color: rgb(49, 98, 155);
+}
+
+a{
+    color: #23c5c5;
+}
+
+.icon{
+    font-size: 1.8rem;
+    margin-right: 5px;
+    color: rgb(49, 98, 155);
+}

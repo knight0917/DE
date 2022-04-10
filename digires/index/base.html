@@ -20,15 +20,16 @@
                 <ul class="nav">
                     <li><a class="link" href="{% url 'home' %}">Home</a></li>
                     <li><a class="link" href="{% url 'template' %}">Templates</a></li>
-                    <li><a class="link" href="{% url 'about' %}">About</a></li>
+                    <li><a class="link" href="#contact">Contact</a></li>                    
+
                 <ul>
             </nav>
 
             {% if request.user.is_authenticated %}
-            <p>Hello, {{request.user}}</p>
-                <a class="link"href="{% url 'logout' %}">Logout</a>
+                <p>Hello, {{request.user}}</p>
+                <a id="log" href="{% url 'logout' %}">Logout</a>
             {% else %}
-                <a class="link" href="{% url 'login' %}">Login</a>
+                <a id="log" href="{% url 'login' %}">Login</a>
             {% endif %}
 
         </header>
@@ -45,6 +46,7 @@
         {% block content %}
         
         {% endblock  %}
+
         <div class="footer">
             <footer>&copy; Copyright 2022 digires.in</footer>
         </div>

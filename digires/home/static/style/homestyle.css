@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
+*{
+    font-family: 'Nunito Sans', sans-serif;
+}
 /* h2 tags */
 .first{
     position:absolute;
@@ -8,14 +13,11 @@
 /* p tags */
 .para{
     margin:10px;
-    color:rgb(49, 98, 155);
+    color:#23c5c5;
     font-size: 25px;
 }
 .btn {
-    
-    background-color: #23c5c5;
     border-radius: 5px;
-    color: white;
     padding: 12px 100px;
     font-size: 20px;
     cursor: pointer;
@@ -37,3 +39,88 @@
     margin: 3% 0%;
 }
 
+.my-info{
+    padding: 10%;
+    font-size: large;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.contact__information {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.contact__form{
+    padding: 5%;
+    margin: 0px 0px 0px 20px;
+}
+
+.container{
+    max-width: 768px;
+}
+
+.contact__input{
+    width: 100%;
+    padding: .25rem .5rem .5rem 0;
+}
+.contact__container{
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0px 0px 0px 300px;
+}
+
+.section{
+    padding: 2rem 0 4rem;
+}
+
+.section__subtitle{
+    display: block;
+}
+
+.section__title,
+.section__subtitle{
+    font-size: x-large;
+    text-align: center;
+}
+
+.contact__icon {
+    font-size: 2rem;
+    margin-right: 5px;
+    color: rgb(49, 98, 155);
+}
+
+label{
+    color: rgb(49, 98, 155);
+    font-size: large;
+}
+
+input, textarea{
+    padding: 10px;
+    border: 1px solid #23c5c5;
+    border-radius: 8px;
+    border-color: #23c5c5;
+    font-size: 17px;
+    margin: 0px 0px 10px 20px;
+}
+
+.button {
+    border-radius: 10px;
+    padding: 12px 10px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: white; 
+    color: #23c5c5; 
+    border: 2px solid #23c5c5;
+}
+
+.button:hover {
+    background-color:rgb(49, 98, 155);
+    border-color: rgb(49, 98, 155);
+}
+
+a{
+    text-decoration: none;
+}

@@ -1,90 +1,64 @@
+{% extends 'base.html' %}
 {% load static %}
 
     
 {% block css_files %}
-    <link rel="stylesheet" href="{% static 'style/templatestyle.css' %}">
+    <link rel="stylesheet" href="{% static 'style/Templatestyle.css' %}">
 {% endblock  %}
 
 {% block content %}
 
 
+<div id="form-fill">
+    <form id="" method="POST">
+    {% csrf_token %}
+        <h1>Enter your details:</h1>
+        <div class="form">
+        
+            <label for="namefields">Your Name</label><br>
+            <input type="text" class="" id="namefields" placeholder="Enter here" name="name"><br>
 
-<form id="" method="POST">
-{% csrf_token %}
-    <h1>Enter your details</h1>
-    <div class="">
-        <div class=""> 
-        <h2>Personal details</h2>
+            <label for="phonefield">Your Phone</label><br>
+            <input type="number" class="" id="phonefield" placeholder="Enter here" name="phone"><br>
 
-            <div class="">
-                <label for="namefields">Your Name</label><br>
-                <input type="text" class="" id="namefields" placeholder="Enter here" name="name">
-            </div>
+            <label for="emailfield">Your Email</label><br>
+            <input type="email" class="" id="emailfield" placeholder="Enter here" name="email"><br>
 
-            <div class="">
-                <label for="phonefield">Your Phone</label><br>
-                <input type="number" class="" id="phonefield" placeholder="Enter here" name="phone">
-            </div>
+            <label for="addressfield">Your Address</label><br>
+            <textarea id="addressfield" placeholder="Enter here" rows="3" cols="" name="address"></textarea><br>
 
-            <div class="">
-                <label for="emailfield">Your Email</label><br>
-                <input type="email" class="" id="emailfield" placeholder="Enter here" name="email">
-            </div>
+            <label for="linkedinfield">Linkedin</label><br>
+            <input type="text" id="linkedinfield" placeholder="Enter here" name="linkedin"><br>
 
-            <div class="">
-                <label for="addressfield">Your Address</label><br>
-                <textarea id="addressfield" placeholder="Enter here" rows="3" cols="" name="address"></textarea>
-            </div>
-            
-            <div class="">
-                <label for="linkedinfield">Linkedin</label><br>
-                <input type="text" id="linkedinfield" placeholder="Enter here" name="linkedin">
-            </div>
+            <label for="githubfield">github</label><br>
+            <input type="text" id="githubfield" placeholder="Enter here" name="github"><br>
 
-            <div class="">
-                <label for="githubfield">github</label><br>
-                <input type="text" id="githubfield" placeholder="Enter here" name="github">
-            </div>
+            <label for="webfield">Your Website Link</label><br>
+            <input type="text" id="webfield" placeholder="Enter here" name="web"><br>
 
-            <div class="">
-                <label for="webfield">Your Website Link</label><br>
-                <input type="text" id="webfield" placeholder="Enter here" name="web">
-            </div>
+            <label class="" for="quali">Acadmic Acheivements</label><br>
+            <textarea id="quali" class="acadfield" placeholder="Enter here" rows="3" name="acadqual"></textarea><br>
+
+            <label class="" for="wkexperience">Work Experience</label><br>
+            <textarea id="wkexperience" class="wefield" placeholder="Enter here" rows="3" name="workexp"></textarea><br>
+        
+            <label class="a" for="inter">Your Interests</label><br>
+            <textarea id="inter" class="inter" placeholder="Enter here" rows="3" name="inter"></textarea><br>
+        
+            <label class="" for="about">About</label><br>
+            <textarea id="about" class="about" placeholder="Enter here" rows="3" name="about"></textarea>
+        
+            <input type="checkbox" id="check" name="check">
+            <label for="check"> I Agree</label>
+
         </div>
-
         <div class="">
-            <h2>Professional details</h2>
-    
-            <div id="">
-                <label class="" for="quali">Acadmic Acheivements</label><br>
-                <textarea id="quali" class="acadfield" placeholder="Enter here" rows="3" name="acadqual"></textarea>
-            </div>
-
-            
-            <div id="">
-                <label class="" for="wkexperience">Work Experience</label><br>
-                <textarea id="wkexperience" class="wefield" placeholder="Enter here" rows="3" name="workexp"></textarea>
-            </div>
-
-            <div id="">
-                <label class="a" for="inter">Your Interests</label><br>
-                <textarea id="inter" class="inter" placeholder="Enter here" rows="3" name="inter"></textarea>
-            </div>
-
-            <div id="">
-                <label class="" for="about">About</label><br>
-                <textarea id="about" class="about" placeholder="Enter here" rows="3" name="about"></textarea>
-            </div>
-            <div id="">
-                <input type="checkbox" id="check" name="check">
-                <label for="check"> I Agree</label><br>
-            </div>
-
+            <a href=""><button type="Submit">Submit</button></a>
         </div>
+    </form>
+    <div class="image">
+        <img class="" src="{% static 'images/form.svg' %}" alt="">
     </div>
-    <div class="">
-        <a href=""><button type="Submit">Submit</button></a>
-    </div>
-</form>
+</div>
 
 {% endblock %}

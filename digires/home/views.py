@@ -87,5 +87,3 @@ def temp1(request):
     userdetail = UserDetail.objects.last()
     return render(request, 'temp1.html', {'userdetail':userdetail})
 
-
-

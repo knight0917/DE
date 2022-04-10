@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 
+{% load static %}
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'style/registerstyle.css' %}">
+{% endblock  %}
+
 {% block content %}
 
 
@@ -8,11 +13,11 @@
     <form method="POST">
     {% csrf_token %}
         
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" placeholder="Enter Username">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" placeholder="Enter Username"><br>
 
-        <label for="password">Password:</label>
-        <input type="password" id="username" name="password" placeholder="Enter Password">
+        <label for="password">Password:</label><br>
+        <input type="password" id="username" name="password" placeholder="Enter Password"><br>
 
         <input type="submit" value="Login">
     </form>

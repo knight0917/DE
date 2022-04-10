@@ -1,16 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@100&family=Short+Stack&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 .nav{
     list-style: none;
-    font-family: "Montserrat", sans-serif;
-
 }
 
 .logo{
@@ -25,8 +22,6 @@
     justify-content: space-between;
     align-items: flex-end;
     padding:30px 10%;
-    
-   
 }
 
 li .link{
@@ -53,11 +48,26 @@ li .link{
 .footer{
     background-color: rgb(49, 98, 155);
     height: 50px; 
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 footer{
     font-size:larger;
     text-align: center;
     color: white;
     text-shadow: 0px 0px 4px white;
-    padding: 10px;
+    padding: 10px;			
+}
+
+#log{
+    text-decoration: none;
+    color: #23c5c5;
+    font-size: large;
+    transition: 0.3s ease 0s;
+}
+
+#log:hover{
+    color: white;
+
 }
