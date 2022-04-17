@@ -76,8 +76,12 @@
     </div>
     
 </div>
-<button>
-    <a class="print-button" href="#">Print Your Resume</a>
-</button>
+<div class="down">
+    <i class="uil uil-print icon" onclick="window.print()"></i>Print your Resume.
+
+    <i class="uil uil-copy icon" onclick="copyToClipboard()"></i>Copy your Resume link
+</div>
+
+<script src="{% static 'js/Temp1js.js' %}"></script>
 
 {% endblock  %}

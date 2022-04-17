@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 class UserDetail(models.Model):
     name           = models.CharField(max_length=50)
     email          = models.EmailField(max_length=50, null=True)
-    phone          = models.IntegerField(null=True)
+    phone          = models.IntegerField(null=True, max_length=10)
     address        = models.CharField(max_length=500, null=True)
     web            = models.CharField(max_length=800, null=True)
     linkedin       = models.CharField(max_length=800, null=True)
