@@ -82,6 +82,19 @@
     <a class="pre" onclick="copyToClipboard()"><i class="uil uil-copy icon" ></i>Copy your Resume link.</a>
 </div>
 
-<script src="{% static 'js/Temp1js.js' %}"></script>
+{% comment %} <script src="{% static 'js/Temp1js.js' %}"></script> {% endcomment %}
+
+<script>
+
+    function copyToClipboard(text) {
+        var inputc = document.body.appendChild(document.createElement("input"));
+        inputc.value = window.location.href;
+        inputc.focus();
+        inputc.select();
+        document.execCommand('copy');
+        inputc.parentNode.removeChild(inputc);
+        alert("URL Copied.");
+        }
+</script>
 
 {% endblock  %}
