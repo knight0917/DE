@@ -1,7 +1,7 @@
 {% load static %}
     
 {% block css_files %}
-    <link rel="stylesheet" href="{% static 'style/Temp1style.css' %}">
+    <link rel="stylesheet" href="{% static 'style/temp1style.css' %}">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
 {% endblock  %}
@@ -77,9 +77,9 @@
     
 </div>
 <div class="down">
-    <i class="uil uil-print icon" onclick="window.print()"></i>Print your Resume.
+    <a class="pre" onclick="window.print()"><i class="uil uil-print icon"></i>Print your Resume.</a>
 
-    <i class="uil uil-copy icon" onclick="copyToClipboard()"></i>Copy your Resume link
+    <a class="pre" onclick="copyToClipboard()"><i class="uil uil-copy icon" ></i>Copy your Resume link.</a>
 </div>
 
 <script src="{% static 'js/Temp1js.js' %}"></script>
