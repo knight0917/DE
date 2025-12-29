@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ resume.full_name }} - Resume</title>
+    <!-- Online CSS: Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4;
+            margin: 1.5cm;
+            @bottom-center {
+                content: "Page " counter(page) " of " counter(pages);
+                font-family: 'Open Sans', sans-serif;
+                font-size: 8pt;
+                color: #888;
+            }
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            font-size: 10pt;
+        }
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 28pt;
+            margin-bottom: 5px;
+            color: #1a202c;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        h2, h3, h4 {
+            font-family: 'Merriweather', serif;
+        }
+        a { color: #2b6cb0; text-decoration: none; }
+        
+        .header {
+            border-bottom: 2px solid #2b6cb0;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .contact-info {
+            font-size: 9pt;
+            color: #555;
+            margin-top: 5px;
+        }
+        
+        .section-title {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 11pt;
+            font-weight: 700;
+            color: #2b6cb0;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 5px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .job-entry {
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+        }
+        .job-title {
+            font-weight: 700;
+            font-size: 11pt;
+            color: #2d3748;
+        }
+        .company {
+            font-weight: 600;
+            color: #4a5568;
+        }
+        .dates {
+            float: right;
+            font-size: 9pt;
+            color: #718096;
+            font-weight: 600;
+        }
+        .description {
+            margin-top: 8px;
+            text-align: justify;
+            color: #4a5568;
+        }
+        .summary {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>{{ resume.full_name }}</h1>
+        <div class="contact-info">
+            {{ resume.email }} | {{ resume.phone }} <br>
+            {{ resume.address }}
+            {% if resume.linkedin %} | <a href="{{ resume.linkedin }}">LinkedIn</a> {% endif %}
+            {% if resume.website %} | <a href="{{ resume.website }}">Portfolio</a> {% endif %}
+        </div>
+    </div>
+
+    {% if resume.summary %}
+    <div class="summary">
+        <p>{{ resume.summary }}</p>
+    </div>
+    {% endif %}
+
+    {% if resume.experience.exists %}
+    <div class="section">
+        <div class="section-title">Experience</div>
+        {% for exp in resume.experience.all %}
+        <div class="job-entry">
+            <div>
+                <span class="job-title">{{ exp.position }}</span>
+                <span class="dates">
+                    {{ exp.start_date|date:"F Y" }} - 
+                    {% if exp.is_current %}Present{% else %}{{ exp.end_date|date:"F Y" }}{% endif %}
+                </span>
+            </div>
+            <div class="company">{{ exp.company }}</div>
+            <div class="description">
+                {{ exp.description|linebreaksbr }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if resume.education.exists %}
+    <div class="section">
+        <div class="section-title">Education</div>
+        {% for edu in resume.education.all %}
+        <div class="job-entry">
+            <div>
+                <span class="job-title">{{ edu.school }}</span>
+                <span class="dates">
+                    {{ edu.start_date|date:"Y" }} - {{ edu.end_date|date:"Y" }}
+                </span>
+            </div>
+            <div>{{ edu.degree }}</div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</body>
+</html>

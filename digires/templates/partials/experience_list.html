@@ -1,0 +1,22 @@
+{% for exp in resume.experience.all %}
+<div class="border-b last:border-0 py-4 group relative">
+    <div class="flex justify-between items-start">
+        <div>
+            <h4 class="font-bold text-lg">{{ exp.position }} at {{ exp.company }}</h4>
+            <p class="text-gray-600 text-sm">
+                {{ exp.start_date|date:"M Y" }} - 
+                {% if exp.is_current %}Present{% else %}{{ exp.end_date|date:"M Y" }}{% endif %}
+            </p>
+            <p class="mt-2 text-gray-700 whitespace-pre-line">{{ exp.description }}</p>
+        </div>
+        <button hx-post="{% url 'htmx_delete_experience' exp.id %}" 
+                hx-confirm="Are you sure?" 
+                hx-target="#experience-list" 
+                class="text-red-500 opacity-0 group-hover:opacity-100 transition">
+            Delete
+        </button>
+    </div>
+</div>
+{% empty %}
+<p class="text-gray-500 italic">No experience added yet.</p>
+{% endfor %}
